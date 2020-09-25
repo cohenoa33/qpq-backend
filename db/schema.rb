@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_25_002803) do
+ActiveRecord::Schema.define(version: 2020_09_25_170536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,12 +24,12 @@ ActiveRecord::Schema.define(version: 2020_09_25_002803) do
   create_table "requests", force: :cascade do |t|
     t.string "status"
     t.text "message"
-    t.bigint "user_id", null: false
-    t.bigint "service_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "provider_id"
+    t.integer "requester_id"
+    t.bigint "service_id", null: false
     t.index ["service_id"], name: "index_requests_on_service_id"
-    t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
   create_table "service_categories", force: :cascade do |t|
@@ -63,10 +63,11 @@ ActiveRecord::Schema.define(version: 2020_09_25_002803) do
     t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email"
+    t.string "password_digest"
   end
 
   add_foreign_key "requests", "services"
-  add_foreign_key "requests", "users"
   add_foreign_key "service_categories", "categories"
   add_foreign_key "service_categories", "services"
 end
