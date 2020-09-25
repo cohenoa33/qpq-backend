@@ -1,4 +1,4 @@
-class RequestsController < ApplicationController
+class Api::V1::RequestsController < ApplicationController
 
     def index
         approved_requests = Request.all.where(status: "approved")
