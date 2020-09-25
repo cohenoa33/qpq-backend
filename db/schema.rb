@@ -12,10 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2020_09_25_170536) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -72,5 +70,4 @@ ActiveRecord::Schema.define(version: 2020_09_25_170536) do
   add_foreign_key "requests", "services"
   add_foreign_key "service_categories", "categories"
   add_foreign_key "service_categories", "services"
-
 end
