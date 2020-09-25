@@ -10,10 +10,12 @@ class User < ApplicationRecord
   
   has_many :requests
   
-  validates :email, uniqueness: true
-  validates :name, presence: true
-  has_secure_password
+  validates :email, uniqueness: true, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
   
+  has_secure_password
+  # BCrypt::Password.create('P@ssw0rd')
 
  
 end

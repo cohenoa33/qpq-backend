@@ -1,2 +1,0 @@
-class ServiceCategoriesController < ApplicationController
-end
