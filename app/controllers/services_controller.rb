@@ -2,6 +2,11 @@ class Api::V1::ServicesController < ApplicationController
  
     def index 
         @service = Service.all
+        ServiceSerializer.new(@service).to_serialized_json
+    end
+
+    def show 
+        ServiceSerializer.new(@service).to_serialized_json 
     end
 
 
