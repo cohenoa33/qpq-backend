@@ -11,6 +11,12 @@ class Api::V1::RequestsController < ApplicationController
             end
         end
         @requests
+        render json: @request
+    end
+
+    def show 
+        @request = Request.find_by(params[:id])
+        render json: @request
     end
 
 end

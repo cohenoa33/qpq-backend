@@ -21,4 +21,6 @@ User.create(
   password_confirmation: "helloThere1"
 )
 
+services
+
 puts "seeded"
