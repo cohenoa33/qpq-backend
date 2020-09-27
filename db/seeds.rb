@@ -6,20 +6,23 @@ require 'faker'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
 
-user1 = User.create(
+
+User.create(
   first_name:  Faker::Name.first_name, 
   last_name:  Faker::Name.last_name,
-  street:Faker::Address.street_name,
-  city:Faker::Address.city,
-  state: Faker::Address.state_abbr,
-  zipcode: Faker::Address.zip_code,
+  street: "12519 NE 85th Street",
+  city: "Kirkland",
+  state: "WA",
+  zipcode: 98033,
   birth_year: 1993,
   img_url: Faker::Avatar.image,
   email: Faker::Internet.email,
   password: "helloThere1",
   password_confirmation: "helloThere1"
 )
+
 
 Service.create(
   name: "photography",
@@ -30,5 +33,6 @@ Service.create(
   value: 20, 
   user_id: user1
 )
+
 
 puts "seeded"
