@@ -6,33 +6,29 @@ require 'faker'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
-
+# User.destroy_all
 
 User.create(
-  first_name:  Faker::Name.first_name, 
-  last_name:  Faker::Name.last_name,
-  street: "12519 NE 85th Street",
-  city: "Kirkland",
-  state: "WA",
-  zipcode: 98033,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  street: '12519 NE 85th Street',
+  city: 'Kirkland',
+  state: 'WA',
+  zipcode: 98_033,
   birth_year: 1993,
   img_url: Faker::Avatar.image,
   email: Faker::Internet.email,
-  password: "helloThere1",
-  password_confirmation: "helloThere1"
+  password: 'helloThere1',
+  password_confirmation: 'helloThere1'
 )
-
 
 Service.create(
-  name: "photography",
+  name: 'photography',
   isService: true,
-  offeringDescription: "I am offering professional headshots",
-  exchangeDescription: "In exchange, they have a value of 25 point for one headshot",
-  img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQeiX0wZhnW9Z6oqu6xNHC2DO5He7h4Kb6jaA&usqp=CAU",
-  value: 20, 
-  user_id: user1
+  offeringDescription: 'I am offering professional headshots',
+  exchangeDescription: 'In exchange, they have a value of 25 point for one headshot',
+  img_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQeiX0wZhnW9Z6oqu6xNHC2DO5He7h4Kb6jaA&usqp=CAU',
+  value: 20
 )
 
-
-puts "seeded"
+puts 'seeded'

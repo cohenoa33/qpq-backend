@@ -1,45 +1,47 @@
 class Api::V1::ServicesController < ApplicationController
-    before_action :find_service, only: [:show, :update, :destroy]
-    
-    def index 
-        @services = Service.all
-        render json: @service
+  def index
+    services = Service.all
+    render json: services
+  end
+
+  def show
+    service = Service.find_by(id: params[:id])
+    if service
+      render json: service
+    else
+      render json: { message: 'This ID does not exist' }
     end
+  end
 
-    def show
-        if @service
-          render json: @service
-        else
-          render json: { message: 'This Service does not exist' }
-        end
-      end
-
-
-    def create 
-        @service = Service.create(service_params)
-        render json: @service
+  def create
+    service = Service.create(service_params)
+    if service.valid?
+      render json: { service: ServiceSerializer.new(service) }, status: :created
+    else
+      render json: { error: 'failed to create service' }, status: :not_acceptable
     end
+  end
 
-    def update 
-        @service.update(service_params)
-        @service.save
-        render json: @service
+  def update
+    service = Service.find_by(id: params[:id])
 
+    if service.update(service_params)
+      render json: service
+    else
+      render json: { error: 'Something went wrong' }
     end
+  end
 
-    def destroy 
-        @service.destroy
-        render json: {message: "Successfully deleted the service"}
-      end
+  def destroy
+    service = Service.find_by(id: params[:id])
+    service.destroy
 
-    
-    private 
-    def service_params
-        params.require(:service).permit(:name, :isService, :offeringDescription, :exchangeDescription, :img_url, :value)   
-    end
+    render json: { message: 'deleted' }
+  end
 
-    def find_service 
-        @service = @Service.find(params[:id])
-        render json: @service
-    end
+  private
+
+  def service_params
+    params.require(:service).permit(:name, :isService, :offeringDescription, :exchangeDescription, :img_url, :value)
+  end
 end
