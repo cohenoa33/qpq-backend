@@ -1,12 +1,11 @@
 class Api::V1::ServicesController < ApplicationController
-
+    before_action :find_service, only: [:show, :update, :destroy]
     def index 
-        @service = Service.all
+        @services = Service.all
         render json: @service
     end
 
     def show
-        @service = Service.find_by(find_service)
         if @service
           render json: @service
         else
@@ -21,16 +20,13 @@ class Api::V1::ServicesController < ApplicationController
     end
 
     def update 
-        @service = Service.find(service_params)
         @service.update(service_params)
         @service.save
         render json: @service
-        # needs more??
 
     end
 
     def destroy 
-        @service = Service.find(service_params)
         @service.destroy
         render json: {message: "Successfully deleted the service"}
       end
@@ -42,7 +38,7 @@ class Api::V1::ServicesController < ApplicationController
     end
 
     def find_service 
-        @service = @Service.find(:id params[:id])
+        @service = @Service.find(params[:id])
         render json: @service
     end
 end
