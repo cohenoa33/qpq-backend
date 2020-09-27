@@ -42,6 +42,6 @@ class Api::V1::ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit(:name, :isService, :offeringDescription, :exchangeDescription, :img_url, :value)
+    params.require(:service).permit(:name, :isService, :offeringDescription, :exchangeDescription, :img_url, :value, :user_id)
   end
 end

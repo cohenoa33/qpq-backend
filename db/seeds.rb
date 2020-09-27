@@ -6,7 +6,7 @@ require 'faker'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# User.destroy_all
+User.destroy_all
 
 User.create(
   first_name: Faker::Name.first_name,
@@ -28,7 +28,16 @@ Service.create(
   offeringDescription: 'I am offering professional headshots',
   exchangeDescription: 'In exchange, they have a value of 25 point for one headshot',
   img_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQeiX0wZhnW9Z6oqu6xNHC2DO5He7h4Kb6jaA&usqp=CAU',
-  value: 20
+  value: 20,
+  user_id: User.all.sample.id
+)
+
+Request.create(
+  status: 'approved',
+  message: 'HHHHH',
+  provider_id: 7,
+  requester_id: 6,
+  service_id: Service.all.sample.id
 )
 
 puts 'seeded'
