@@ -1,5 +1,6 @@
 class Api::V1::ServicesController < ApplicationController
     before_action :find_service, only: [:show, :update, :destroy]
+    
     def index 
         @services = Service.all
         render json: @service

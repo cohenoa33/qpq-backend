@@ -27,7 +27,8 @@ Service.create(
   offeringDescription: "I am offering professional headshots",
   exchangeDescription: "In exchange, they have a value of 25 point for one headshot",
   img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQeiX0wZhnW9Z6oqu6xNHC2DO5He7h4Kb6jaA&usqp=CAU",
-  value: 20, user_id: user1
+  value: 20, 
+  user_id: user1
 )
 
 puts "seeded"
