@@ -25,6 +25,7 @@ User.create(
 Service.create(
   name: 'photography',
   isService: true,
+
   offeringDescription: 'I am offering professional headshots',
   exchangeDescription: 'In exchange, they have a value of 25 point for one headshot',
   img_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQeiX0wZhnW9Z6oqu6xNHC2DO5He7h4Kb6jaA&usqp=CAU',
