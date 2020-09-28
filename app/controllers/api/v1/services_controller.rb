@@ -1,5 +1,6 @@
 class Api::V1::ServicesController < ApplicationController
 <<<<<<< HEAD
+<<<<<<< HEAD
     # before_action :find_service, only: [:show, :update, :destroy]
 
     def index 
@@ -30,10 +31,40 @@ class Api::V1::ServicesController < ApplicationController
   end
 
   def show
+=======
+
+  def index
+    services = Service.all
+    render json: services
+  end
+
+  def show
     service = Service.find_by(id: params[:id])
     if service
       render json: service
     else
+      render json: { message: 'This ID does not exist' }
+    end
+  end
+
+  def create
+    service = Service.create(service_params)
+    if service.valid?
+      render json: { service: ServiceSerializer.new(service) }, status: :created
+    else
+      render json: { error: 'failed to create service' }, status: :not_acceptable
+
+    end
+  end
+
+
+  def update
+>>>>>>> 9d6b8b784bfdbad3e070644e5c0a22cadc0e11b0
+    service = Service.find_by(id: params[:id])
+    if service
+      render json: service
+    else
+<<<<<<< HEAD
       render json: { message: 'This ID does not exist' }
     end
   end
@@ -55,6 +86,14 @@ class Api::V1::ServicesController < ApplicationController
         render json: service
 =======
   def update
+=======
+      render json: { error: 'Something went wrong' }
+
+    end
+  end
+
+  def destroy
+>>>>>>> 9d6b8b784bfdbad3e070644e5c0a22cadc0e11b0
     service = Service.find_by(id: params[:id])
 
     if service.update(service_params)
@@ -65,6 +104,7 @@ class Api::V1::ServicesController < ApplicationController
     end
   end
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     def destroy 
         service.destroy
@@ -95,4 +135,12 @@ class Api::V1::ServicesController < ApplicationController
     params.require(:service).permit(:name, :isService, :offeringDescription, :exchangeDescription, :img_url, :value, :user_id)
   end
 >>>>>>> 944512a90dfbd5927184de3ecdc90a8859616ee4
+=======
+  private
+
+  def service_params
+    params.require(:service).permit(:name, :isService, :offeringDescription, :exchangeDescription, :img_url, :value, :user_id)
+  end
+
+>>>>>>> 9d6b8b784bfdbad3e070644e5c0a22cadc0e11b0
 end

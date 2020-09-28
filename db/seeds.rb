@@ -26,18 +26,25 @@ Service.create(
   name: 'photography',
   isService: true,
 <<<<<<< HEAD
+<<<<<<< HEAD
   offeringDescription: "I am offering professional headshots",
   exchangeDescription: "In exchange, they have a value of 25 point for one headshot",
   img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQeiX0wZhnW9Z6oqu6xNHC2DO5He7h4Kb6jaA&usqp=CAU",
   value: 20, 
   user_id: User.all.first
 =======
+=======
+
+>>>>>>> 9d6b8b784bfdbad3e070644e5c0a22cadc0e11b0
   offeringDescription: 'I am offering professional headshots',
   exchangeDescription: 'In exchange, they have a value of 25 point for one headshot',
   img_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQeiX0wZhnW9Z6oqu6xNHC2DO5He7h4Kb6jaA&usqp=CAU',
   value: 20,
   user_id: User.all.sample.id
+<<<<<<< HEAD
 >>>>>>> 944512a90dfbd5927184de3ecdc90a8859616ee4
+=======
+>>>>>>> 9d6b8b784bfdbad3e070644e5c0a22cadc0e11b0
 )
 
 Request.create(
