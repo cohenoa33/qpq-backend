@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise  :database_authenticatable, :registerable,
@@ -20,7 +19,6 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  has_secure_password
+  # has_secure_password
   # BCrypt:: Password.create('P@ssw0rd')
-
 end

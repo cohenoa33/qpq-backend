@@ -1,6 +1,6 @@
 class Service < ApplicationRecord
-  has_many :service_categories dependent: :destroy
-  has_many :categories, through: :services 
+  has_many :service_categories, dependent: :destroy
+  has_many :categories, through: :services
   belongs_to :user
 
   # # as a requester
