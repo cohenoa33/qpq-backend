@@ -1,6 +1,6 @@
 class Service < ApplicationRecord
-  has_many :service_categories
-  has_many :categories, through: :services
+  has_many :service_categories dependent: :destroy
+  has_many :categories, through: :services 
   belongs_to :user
 
   # # as a requester
@@ -8,7 +8,6 @@ class Service < ApplicationRecord
   has_many :requesters, through: :service_requesters, source: :requested_service
 
   # # as a provider
-  has_many :service_providers, class_name: 'Request', foreign_key: :response_service_id, dependent: :destroy
-  has_many :providers, through: :service_providers, source: :responce_service
+  has_many :service_responders, class_name: 'Request', foreign_key: :response_service_id, dependent: :destroy
+  has_many :responders, through: :service_responders, source: :response_service
 end
-# # # # # #
