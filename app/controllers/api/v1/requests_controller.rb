@@ -1,4 +1,7 @@
 class Api::V1::RequestsController < ApplicationController
+  # before_action :authenticate_user!
+  # comment this out when testing controllers
+
   def index
     # approved_requests = Request.all.where(status: 'approved')
     # @requests = []

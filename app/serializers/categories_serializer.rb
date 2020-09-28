@@ -1,4 +1,4 @@
-class CategoryiesSerializer < ActiveModel::Serializer
+class CategoriesSerializer < ActiveModel::Serializer
   attributes :id, :name
 
   has_many :service_categories
