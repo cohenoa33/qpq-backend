@@ -42,16 +42,16 @@ class Api::V1::RequestsController < ApplicationController
     end
   end
 
-  def destroy
-    request = Request.find_by(id: params[:id])
-    request.destroy
+  # def destroy
+  #   request = Request.find_by(id: params[:id])
+  #   request.destroy
 
-    render json: { message: 'deleted' }
-  end
+  #   render json: { message: 'deleted' }
+  # end
 
   private
 
   def request_params
-    params.require(:request).permit(:status, :message, :provider_id, :requester_id, :service_id)
+    params.require(:request).permit(:status, :message, :response_service_id, :requested_service_id)
   end
 end
