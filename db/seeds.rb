@@ -14,7 +14,7 @@ User.create(
   street: '12519 NE 85th Street',
   city: 'Kirkland',
   state: 'WA',
-  zipcode: 98_033,
+  zipcode: 98033,
   birth_year: 1993,
   img_url: Faker::Avatar.image,
   email: Faker::Internet.email,
