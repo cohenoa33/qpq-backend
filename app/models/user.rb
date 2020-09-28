@@ -1,4 +1,11 @@
 class User < ApplicationRecord
+  
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise  :database_authenticatable, :registerable,
+          :recoverable, :rememberable, :validatable,
+          :jwt_authenticatable, jwt_revocation_strategy: JwtDenylist
+
   geocoded_by :address
   after_validation :geocode
 
@@ -15,4 +22,5 @@ class User < ApplicationRecord
 
   has_secure_password
   # BCrypt:: Password.create('P@ssw0rd')
+
 end

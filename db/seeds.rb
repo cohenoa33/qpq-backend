@@ -20,8 +20,8 @@ User.destroy_all
     street: '12519 NE 85th Street',
     city: 'Kirkland',
     state: 'WA',
-    zipcode: 98_033,
-    birth_year: 1993,
+    zipcode: 98033,
+    birth_year: rand(1980..2000),
     img_url: Faker::Avatar.image,
     email: Faker::Internet.email,
     password: 'helloThere1',
@@ -55,6 +55,7 @@ end
     name: Faker::Commerce.department
   )
 end
+
 
 40.times do
   ServiceCategory.create(
