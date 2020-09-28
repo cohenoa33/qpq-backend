@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_27_222906) do
+ActiveRecord::Schema.define(version: 2020_09_28_203721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,10 +26,8 @@ ActiveRecord::Schema.define(version: 2020_09_27_222906) do
     t.text "message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "provider_id"
-    t.integer "requester_id"
-    t.bigint "service_id", null: false
-    t.index ["service_id"], name: "index_requests_on_service_id"
+    t.integer "response_service_id"
+    t.integer "requested_service_id"
   end
 
   create_table "service_categories", force: :cascade do |t|
@@ -71,7 +69,6 @@ ActiveRecord::Schema.define(version: 2020_09_27_222906) do
     t.float "longitude"
   end
 
-  add_foreign_key "requests", "services"
   add_foreign_key "service_categories", "categories"
   add_foreign_key "service_categories", "services"
   add_foreign_key "services", "users"
