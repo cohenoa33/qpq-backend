@@ -1,8 +1,7 @@
 class RequestSerializer < ActiveModel::Serializer
   attributes :id, :status, :message
 
-  belongs_to :provider class_name: "User", foreign_key: :provider_id
-
-  belongs_to :requester class_name: "User", foreign_key: :requester_id
+  belongs_to :provider, foreign_key: :provider_id, class_name: 'User'
+  belongs_to :requester, foreign_key: :requester_id, class_name: 'User'
   belongs_to :service
 end
