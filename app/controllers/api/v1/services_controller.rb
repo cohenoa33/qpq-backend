@@ -1,4 +1,5 @@
 class Api::V1::ServicesController < ApplicationController
+  skip_before_action :authorized, only: [:index, :show]
 
   def index
     services = Service.all
