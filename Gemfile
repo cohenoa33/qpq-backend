@@ -14,7 +14,7 @@ gem 'puma', '~> 4.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 # commented out bcrypt for devise 9/28/20 nc/bb
 gem 'faker'
 
@@ -51,5 +51,3 @@ gem 'geocoder'
 gem "active_model_serializers", "~> 0.10.10"
 
 # adds devise-jwt gem -nc/bb
-gem 'devise'
-gem 'devise-jwt', '~> 0.7.0'
