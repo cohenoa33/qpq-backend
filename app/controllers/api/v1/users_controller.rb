@@ -61,7 +61,7 @@ def create
     private
   
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :street, :city, :state, :zipcode, :birth_year, :img_url, :email, :password, :password_confirmation)
+      params.require(:auth).permit(:first_name, :last_name, :street, :city, :state, :zipcode, :birth_year, :img_url, :email, :password, :password_confirmation)
     end
   
 end
