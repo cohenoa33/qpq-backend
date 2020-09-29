@@ -1,9 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise  :database_authenticatable, :registerable,
-          :recoverable, :rememberable, :validatable,
-          :jwt_authenticatable, jwt_revocation_strategy: JwtDenylist
 
   geocoded_by :address
   after_validation :geocode
@@ -19,6 +14,27 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  # has_secure_password
+  has_secure_password
   # BCrypt:: Password.create('P@ssw0rd')
+
+  
+  # fetch('http://localhost:3000/api/v1/users', {
+  #   method: 'POST',
+  #   headers: {
+  #     'Content-Type': 'application/json',
+  #     Accept: 'application/json'
+  #   },
+  #   body: JSON.stringify({
+  #     user: {
+  #       email: "sylviawoods@gmail.com",
+  # first_name: "Hank",
+  # last_name: "Thomas",
+  #       password: "whatscooking",
+       
+  #       img_url: "https://upload.wikimedia.org/wikipedia/commons/4/49/Syvia_of_Sylvia%27s_reaturant_N.Y.C_%28cropped%29.jpg"
+  #     }
+  #   })
+  # })
+  #   .then(r => r.json())
+  #   .then(console.log)
 end
