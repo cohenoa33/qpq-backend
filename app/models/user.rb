@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-
   geocoded_by :address
   after_validation :geocode
 
@@ -10,7 +9,7 @@ class User < ApplicationRecord
   has_many :services
   has_many :requests, through: :services
 
-  validates :email, uniqueness: true, presence: true
+  validates :email, uniqueness: { case_sensitive: false }, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates :first_name, presence: true
   validates :last_name, presence: true
 
