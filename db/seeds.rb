@@ -20,7 +20,7 @@ User.destroy_all
     street: '12519 NE 85th Street',
     city: 'Kirkland',
     state: 'WA',
-    zipcode: 98033,
+    zipcode: 98_033,
     birth_year: rand(1980..2000),
     img_url: Faker::Avatar.image,
     email: Faker::Internet.email,
@@ -56,7 +56,6 @@ end
   )
 end
 
-
 40.times do
   ServiceCategory.create(
     category_id: Category.all.sample.id,
@@ -65,3 +64,7 @@ end
 end
 
 puts 'seeded'
+
+a = User.create(first_name: 'cat', last_name: 'last', street: '12519 NE 85th Street', city: 'Kirkland',
+                state: 'WA', zipcode: 98_033, birth_year: rand(1980..2000), img_url: Faker::Avatar.image, email: 1, password: '123',
+                password_confirmation: '123')
