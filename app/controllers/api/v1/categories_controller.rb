@@ -1,13 +1,13 @@
 class Api::V1::CategoriesController < ApplicationController
+  skip_before_action :authorized, only: %i[index show]
 
-    def index 
-        @categories = Categories.all
-        render json: @categories
-    end
+  def index
+    categories = Category.all
+    render json: categories
+  end
 
-    def show 
-        @categorie = Categories.find_by(params[:id])
-        render json: @categories
-    end
-
+  def show
+    category = Category.find_by(params[:id])
+    render json: category
+  end
 end
