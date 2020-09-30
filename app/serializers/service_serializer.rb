@@ -4,4 +4,5 @@ class ServiceSerializer < ActiveModel::Serializer
   belongs_to :user
   has_many :requesters, through: :request
   has_many :responders, through: :response_service, source: :Request
+  has_many :categories, through: :service_categories
 end
