@@ -3,6 +3,7 @@ class Service < ApplicationRecord
   has_many :categories, through: :service_categories
   belongs_to :user
 
+
   # # as a requester
   has_many :service_requesters, class_name: 'Request', foreign_key: :requested_service_id, dependent: :destroy
   has_many :requesters, through: :service_requesters, source: :requested_service

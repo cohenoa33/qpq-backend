@@ -1,5 +1,5 @@
 class ServiceSerializer < ActiveModel::Serializer
-  attributes :id, :name, :isService, :offeringDescription, :exchangeDescription, :img_url, :value
+  attributes :id, :name, :isService, :offeringDescription, :exchangeDescription, :img_url, :value, :user_id
 
   belongs_to :user
   has_many :requesters, through: :request

@@ -11,9 +11,13 @@ class Request < ApplicationRecord
 
   validate :self_cannot_match
 
+
+
+
   def self_cannot_match
     if requested_service_id == response_service_id
       errors.add(:requested_service_id, 'You cannot request your own service')
     end
   end
 end
+
