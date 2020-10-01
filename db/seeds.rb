@@ -35,7 +35,7 @@ end
     isService: %i[true false].sample,
     offeringDescription: Faker::Lorem.sentence,
     exchangeDescription: Faker::Lorem.paragraph,
-    img_url: Faker::LoremFlickr.image,
+    img_url: "https://robohash.org/#{rand(1900..2000)})/?set=set4",
     value: rand(20..200),
     user_id: User.all.sample.id
   )
