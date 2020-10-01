@@ -1,5 +1,5 @@
 class Api::V1::RequestsController < ApplicationController
-  # before_action :authenticate_user!
+  skip_before_action :authorized, only: [:index, :show]
   # comment this out when testing controllers
 
   def index
