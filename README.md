@@ -43,4 +43,4 @@ Brad Beggs: https://github.com/bdb2381
  
  ## Frontend
  
-https://github.com/bdb2381/mod4-frontend/
+https://github.com/bdb2381/qpq-frontend
