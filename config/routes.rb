@@ -11,7 +11,6 @@ Rails.application.routes.draw do
 
       post '/login', to: 'auth#create'
       get '/current_user', to: 'users#profile'
-      # get '/api/v1/users/:id' to: 'users#show' #test
     end
   end
 end
