@@ -11,9 +11,9 @@ This application is using `postgreSQL` as our database.
 - Navigate into the directory where you cloned the repository.
 - Enter the command "bundle install" in the terminal.
 - Run `sudo service postgresql start` before starting
-- Run "rails db:migrate" in the terminal.
-- Run "rails db:seed" in the terminal for testing data.
-- Run "rails s" to begin server and navigate to your browser 'localhost:3000' (or the server you are running) to view the website!
+- Run `rails db:migrate` in the terminal.
+- Run `rails db:seed` in the terminal for testing data.
+- Run `rails s` to begin server and navigate to your browser 'localhost:3000' (or the server you are running) to view the website!
 
 
 ## Ruby version
