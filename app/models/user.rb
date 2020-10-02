@@ -6,8 +6,8 @@ class User < ApplicationRecord
     [street, city, state, zipcode].compact.join(', ')
   end
 
-  has_many :services
-  has_many :requests, through: :services
+  has_many :services, dependent: :destroy
+  # has_many :requests, through: :services, dependent: :destroy
 
   validates :email, uniqueness: { case_sensitive: false }, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates :first_name, presence: true
