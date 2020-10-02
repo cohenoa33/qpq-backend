@@ -9,7 +9,7 @@ This application is using `postgreSQL` as our database.
 ## Installation
 - Fork and clone repository.
 - Navigate into the directory where you cloned the repository.
-- Enter the command "bundle install" in the terminal.
+- Enter the command `bundle install` in the terminal.
 - Run `sudo service postgresql start` before starting
 - Run `rails db:migrate` in the terminal.
 - Run `rails db:seed` in the terminal for testing data.
