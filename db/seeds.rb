@@ -13,7 +13,7 @@ Category.destroy_all
 Service.destroy_all
 User.destroy_all
 
-15.times do
+5.times do
   User.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -24,8 +24,38 @@ User.destroy_all
     birth_year: rand(1980..2000),
     img_url: Faker::Avatar.image,
     email: Faker::Internet.email,
-    password: 'helloThere1',
-    password_confirmation: 'helloThere1'
+    password: '123',
+    password_confirmation: '123'
+  )
+end
+5.times do
+  User.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    street: '432 Octavia St ',
+    city: 'San Francisco',
+    state: 'CA',
+    zipcode: 94_102,
+    birth_year: rand(1980..2000),
+    img_url: Faker::Avatar.image,
+    email: Faker::Internet.email,
+    password: '123',
+    password_confirmation: '123'
+  )
+end
+5.times do
+  User.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    street: '575 Bellevue Square',
+    city: 'Bellevue',
+    state: 'Wa',
+    zipcode: 98_004,
+    birth_year: rand(1980..2000),
+    img_url: Faker::Avatar.image,
+    email: Faker::Internet.email,
+    password: '123',
+    password_confirmation: '123'
   )
 end
 
