@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  skip_before_action :authorized, only: [:create, :delete]
+  skip_before_action :authorized, only: %i[create delete]
   skip_before_action :authorized, only: %i[show index]
 
   def profile
@@ -8,7 +8,7 @@ class Api::V1::UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
-    
+
     if user.valid?
       token = encode_token({ user_id: user.id })
       render json: { user: UserSerializer.new(user), jwt: token }, status: :created
@@ -56,9 +56,15 @@ class Api::V1::UsersController < ApplicationController
     render json: { message: 'deleted' }
   end
 
+  def persist
+    token = encode_token({ user_id: @user.id })
+    render json: { user: UserSerializer.new(@user), jwt: token }
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :street, :city, :state, :zipcode, :birth_year, :img_url, :email, :password, :password_confirmation)
+    # params.require(:user).permit(:first_name, :last_name, :street, :city, :state, :zipcode, :birth_year, :img_url, :email, :password, :password_confirmation)
+    params.permit(:first_name, :last_name, :street, :city, :state, :zipcode, :birth_year, :img_url, :email, :password, :password_confirmation)
   end
 end

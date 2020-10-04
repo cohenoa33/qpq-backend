@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :users
 
       # resources :users, only: [:create]
-
+      get '/persist', to: 'users#persist'
       post '/login', to: 'auth#create'
       get '/current_user', to: 'users#profile'
     end
