@@ -28,7 +28,7 @@ class Api::V1::RequestsController < ApplicationController
     if request.valid?
       render json: { request: RequestSerializer.new(request) }, status: :created
     else
-      render json: { error: 'failed to create request' }, status: :not_acceptable
+      render json: { error: request.errors.full_messages }, status: :not_acceptable
     end
   end
 
