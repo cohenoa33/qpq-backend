@@ -59,13 +59,84 @@ end
   )
 end
 
-30.times do
+5.times do
   Service.create(
     name: Faker::Commerce.product_name,
     isService: %i[true false].sample,
     offeringDescription: Faker::Lorem.sentence,
     exchangeDescription: Faker::Lorem.paragraph,
-    img_url: "https://robohash.org/#{rand(1900..2000)})/?set=set4",
+    img_url: "https://picsum.photos/200/300?random=8",
+    # img_url: "https://robohash.org/#{rand(1900..2000)})/?set=set4",
+    value: rand(20..200),
+    user_id: User.all.sample.id
+  )
+end
+5.times do
+  Service.create(
+    name: Faker::Commerce.product_name,
+    isService: %i[true false].sample,
+    offeringDescription: Faker::Lorem.sentence,
+    exchangeDescription: Faker::Lorem.paragraph,
+    img_url: "https://picsum.photos/200/300?random=6",
+    # img_url: "https://robohash.org/#{rand(1900..2000)})/?set=set4",
+    value: rand(20..200),
+    user_id: User.all.sample.id
+  )
+end
+5.times do
+  Service.create(
+    name: Faker::Commerce.product_name,
+    isService: %i[true false].sample,
+    offeringDescription: Faker::Lorem.sentence,
+    exchangeDescription: Faker::Lorem.paragraph,
+    img_url: "https://picsum.photos/200/300?random=4",
+    # img_url: "https://robohash.org/#{rand(1900..2000)})/?set=set4",
+    value: rand(20..200),
+    user_id: User.all.sample.id
+  )
+end
+5.times do
+  Service.create(
+    name: Faker::Commerce.product_name,
+    isService: %i[true false].sample,
+    offeringDescription: Faker::Lorem.sentence,
+    exchangeDescription: Faker::Lorem.paragraph,
+    img_url: "https://picsum.photos/200/300?random=3",
+    value: rand(20..200),
+    user_id: User.all.sample.id
+  )
+end
+5.times do
+  Service.create(
+    name: Faker::Commerce.product_name,
+    isService: %i[true false].sample,
+    offeringDescription: Faker::Lorem.sentence,
+    exchangeDescription: Faker::Lorem.paragraph,
+    img_url: "https://picsum.photos/200/300?random=10",
+    value: rand(20..200),
+    user_id: User.all.sample.id
+  )
+end
+5.times do
+  Service.create(
+    name: Faker::Commerce.product_name,
+    isService: %i[true false].sample,
+    offeringDescription: Faker::Lorem.sentence,
+    exchangeDescription: Faker::Lorem.paragraph,
+    img_url: "https://picsum.photos/200/300?random=2",
+
+    value: rand(20..200),
+    user_id: User.all.sample.id
+  )
+end
+5.times do
+  Service.create(
+    name: Faker::Commerce.product_name,
+    isService: %i[true false].sample,
+    offeringDescription: Faker::Lorem.sentence,
+    exchangeDescription: Faker::Lorem.paragraph,
+    img_url: "https://picsum.photos/200/300?random=5",
+
     value: rand(20..200),
     user_id: User.all.sample.id
   )
@@ -94,7 +165,3 @@ end
 end
 
 puts 'seeded'
-
-a = User.create(first_name: 'cat', last_name: 'last', street: '12519 NE 85th Street', city: 'Kirkland',
-                state: 'WA', zipcode: 98_033, birth_year: rand(1980..2000), img_url: Faker::Avatar.image, email: 1, password: '123',
-                password_confirmation: '123')
