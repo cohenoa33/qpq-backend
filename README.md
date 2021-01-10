@@ -32,7 +32,8 @@ rvm use ruby 2.7.0
 
 Install rails server and run `rails s` to start this backend server.
 
-## Demo: https://qpq-client.herokuapp.com/
+## Demo[Heroku](https://qpq-client.herokuapp.com/{:target="_blank"})
+
 
 ## Credits
 
