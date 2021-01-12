@@ -48,4 +48,4 @@ Brad Beggs: https://github.com/bdb2381
 
 ## Frontend
 
-[GitHub](https://github.com/cohenoa33/qpq-frontend)
+[GitHub repo](https://github.com/cohenoa33/qpq-frontend)
