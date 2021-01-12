@@ -33,7 +33,7 @@ rvm use ruby 2.7.0
 Install rails server and run `rails s` to start this backend server.
 
 
-## [Demo](https://qpq-client.herokuapp.com/)
+## [Live App](https://qpq-client.herokuapp.com/)
 
 
 ## Credits
@@ -48,4 +48,4 @@ Brad Beggs: https://github.com/bdb2381
 
 ## Frontend
 
-https://github.com/cohenoa33/qpq-frontend
+[GitHub](https://github.com/cohenoa33/qpq-frontend)
